@@ -76,7 +76,7 @@ english_words = set(
 )
 
 
-def is_valid_text(text, nlp):
+def check_name_is_not_english_word(text, nlp):
     # Check if text is None
     if text is None:
         return False
@@ -94,6 +94,7 @@ def is_valid_text(text, nlp):
     valid_words = [token.text for token in doc if token.text in english_words]
 
     # If there are valid English words, consider the text valid
+
     return len(valid_words) > 0
 
 
